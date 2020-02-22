@@ -9,11 +9,11 @@ websites_list = ["www.facebook.com", "facebook.com"]
 
 
 while True:
-    if dt(dt.now().year,dt.now().month,dt.now().day, 15) < dt.now() < dt(dt.now().year,dt.now().month,dt.now().day, 16):
+    if dt(dt.now().year,dt.now().month,dt.now().day, 9) < dt.now() < dt(dt.now().year,dt.now().month,dt.now().day, 16):
         print("Work hours")
         time.sleep(5)
-        if os.path.exists(hosts_tmp):
-            file = open(hosts_tmp, 'r+')
+        if os.path.exists(hosts_path):
+            file = open(hosts_path, 'r+')
             content = file.read()
             for i in websites_list:
                 if i in content:
@@ -26,8 +26,8 @@ while True:
     else:
         print("Fun hours")
         time.sleep(1)
-        if os.path.exists(hosts_tmp):
-            file = open(hosts_tmp, 'r+')
+        if os.path.exists(hosts_path):
+            file = open(hosts_path, 'r+')
             content = file.readlines()
             file.seek(0)
             for line in content:
